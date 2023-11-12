@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/bin/bash
 # ==============================================================================
 # Start the infinitive service
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
@@ -7,13 +7,25 @@
 # Add your code here
 
 # Declare variables
-declare serial
+declare serial_tty
+declare serial_addr
+declare serialPort
 
 ## Get the 'message' key from the user config options.
-serial=$(bashio::config 'serial')
+serial_tty=$(bashio::config 'serial_tty')
+serial_addr=$(bashio::config 'serial_addr')
 
-## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${serial:="/dev/ttyS0"}"
+if [ ! -z "$serial_addr" ]; then
+  serialPort="tcp://$serial_addr"
+elif [ ! -z "$serial_tty" ]; then
+  serialPort="$serial_tty"
+else
+  bashio::log.error "Serial port not defined!"
+  exit 1
+fi
+
+## Print the serial port we're using
+bashio::log.info "Using serial ${serialPort}"
 
 ## Run your program
-exec /usr/bin/infinitive -serial $serial
+exec /usr/bin/infinitive -serial "$serialPort"

@@ -1,0 +1,22 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Infinitive add-on
+version: "1.0.0"
+slug: infinitive
+description: Infinitive
+url: "https://github.com/tystuyfzand/ha-addons/tree/main/infinitive"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - share:rw
+options:
+  serial: "/dev/ttyS0"
+schema:
+  serial: "str?"
+ports:
+  8080/tcp: 8080
+image: "ghcr.io/tystuyfzand/ha-addons/infinitive-{arch}"

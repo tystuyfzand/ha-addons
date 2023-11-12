@@ -1,19 +1,19 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Start the example service
+# Start the infinitive service
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 
 # Add your code here
 
 # Declare variables
-declare message
+declare serial
 
 ## Get the 'message' key from the user config options.
-message=$(bashio::config 'message')
+serial=$(bashio::config 'serial')
 
 ## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="Hello World..."}"
+bashio::log.info "${serial:="/dev/ttyS0"}"
 
 ## Run your program
-exec /usr/bin/my_program
+exec /usr/bin/infinitive -serial $serial

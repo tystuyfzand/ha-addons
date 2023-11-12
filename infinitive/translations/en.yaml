@@ -1,0 +1,4 @@
+configuration:
+  serial:
+    name: Serial Port
+    description: The serial port used to contact infinitive. For TCP, use `tcp://IP:PORT`

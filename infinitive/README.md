@@ -1,12 +1,14 @@
-# Home Assistant Add-on: Example add-on
-
-_Example add-on to use as a blueprint for new add-ons._
+# Home Assistant Add-on: Infinitive
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports armhf Architecture][armhf-shield]
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
+
+A forked version of [Will1604's Infinitive](https://github.com/Will1604/infinitive) that supports TCP and Direct Serial.
+
+Bundled for Home Assistant to run as an addon instead of separately.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

@@ -8,7 +8,7 @@ build_from:
 labels:
   org.opencontainers.image.title: "Home Assistant Add-on: Infinitive"
   org.opencontainers.image.description: "Infinitive support inside Home Assistant"
-  org.opencontainers.image.source: "https://github.com/tystuyfzand/ha-addons/tree/main/infinitive"
+  org.opencontainers.image.source: "https://github.com/tystuyfzand/ha-addons"
   org.opencontainers.image.licenses: "Apache License 2.0"
 args:
   INFINITIVE_VERSION: "v0.0.4"

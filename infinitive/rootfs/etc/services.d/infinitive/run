@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bashio
 # ==============================================================================
 # Start the infinitive service
 # s6-overlay docs: https://github.com/just-containers/s6-overlay

@@ -5,6 +5,7 @@ slug: infinitive
 description: Infinitive
 url: "https://github.com/tystuyfzand/ha-addons/tree/main/infinitive"
 image: "ghcr.io/tystuyfzand/ha-addons-infinitive-{arch}"
+ingress: true
 arch:
   - armhf
   - armv7
@@ -14,9 +15,10 @@ arch:
 init: false
 map:
   - share:rw
-webui: "http://[HOST]:[PORT:8080]/"
+discovery:
+  - infinitive
 options:
-  serial_tty: null
+  serial_tty: ''
   serial_addr: "localhost:1234"
 schema:
   serial_tty: "device(subsystem=tty)?"

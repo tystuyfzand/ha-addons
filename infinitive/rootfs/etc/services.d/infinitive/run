@@ -12,8 +12,8 @@ declare serial_addr
 declare serialPort
 
 ## Get the 'message' key from the user config options.
-serial_tty=$(bashio::config 'serial_tty')
-serial_addr=$(bashio::config 'serial_addr')
+serial_tty="$(bashio::config 'serial_tty')"
+serial_addr="$(bashio::config 'serial_addr')"
 
 if [ ! -z "$serial_addr" ]; then
   serialPort="tcp://$serial_addr"

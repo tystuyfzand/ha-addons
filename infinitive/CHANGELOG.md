@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.1.4
+
+- Split port definition out to potentially resolve configuration issue
+
 ## 1.1.2, 1.1.3
 
 - Fix configuration issues preventing usage of addon

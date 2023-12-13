@@ -19,9 +19,11 @@ discovery:
   - infinitive
 options:
   serial_tty: ''
-  serial_addr: "localhost:1234"
+  serial_addr: "localhost"
+  serial_port: "1234"
 schema:
   serial_tty: "device(subsystem=tty)?"
   serial_addr: "str?"
+  serial_port: "port?"
 ports:
   8080/tcp: 8080

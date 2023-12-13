@@ -9,14 +9,16 @@
 # Declare variables
 declare serial_tty
 declare serial_addr
+declare serial_port
 declare serialPort
 
 ## Get the 'message' key from the user config options.
-serial_tty="$(bashio::config 'serial_tty')"
-serial_addr="$(bashio::config 'serial_addr')"
+serial_tty=$(bashio::config 'serial_tty')
+serial_addr=$(bashio::config 'serial_addr')
+serial_port=$(bashio::config 'serial_port')
 
 if [ ! -z "$serial_addr" ]; then
-  serialPort="tcp://$serial_addr"
+  serialPort="tcp://$serial_addr:$serial_port"
 elif [ ! -z "$serial_tty" ]; then
   serialPort="$serial_tty"
 else

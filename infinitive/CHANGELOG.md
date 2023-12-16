@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.1.8
+
+- Initial working version. "serial_addr" is now either a device path, or an ip address/host.
+
 ## 1.1.4
 
 - Split port definition out to potentially resolve configuration issue

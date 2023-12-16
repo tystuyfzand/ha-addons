@@ -13,3 +13,6 @@ RUN \
 
 # Copy root filesystem
 COPY rootfs /
+
+# Set file permissions
+RUN chmod +x /etc/services.d/infinitive/*

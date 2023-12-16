@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Start the infinitive service
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
@@ -17,10 +17,11 @@ serial_tty=$(bashio::config 'serial_tty')
 serial_addr=$(bashio::config 'serial_addr')
 serial_port=$(bashio::config 'serial_port')
 
-if [ ! -z "$serial_addr" ]; then
+
+if [ -f "$serial_addr" ]; then
+  serialPort="$serial_addr"
+elif [ ! -z "$serial_addr" ]; then
   serialPort="tcp://$serial_addr:$serial_port"
-elif [ ! -z "$serial_tty" ]; then
-  serialPort="$serial_tty"
 else
   bashio::log.error "Serial port not defined!"
   exit 1
